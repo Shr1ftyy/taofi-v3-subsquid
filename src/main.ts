@@ -39,6 +39,7 @@ processor.run(new TypeormDatabase(), async (ctx) => {
   await ctx.store.save(entities.values(Token));
   await ctx.store.save(entities.values(Pool));
   await ctx.store.save(entities.values(Tick));
+  await ctx.store.save(entities.values(Position));
   await ctx.store.insert(entities.values(Tx));
   await ctx.store.insert(entities.values(Mint));
   await ctx.store.insert(entities.values(Burn));
@@ -50,6 +51,5 @@ processor.run(new TypeormDatabase(), async (ctx) => {
   await ctx.store.save(entities.values(TokenDayData));
   await ctx.store.save(entities.values(TokenHourData));
   await ctx.store.save(entities.values(TickDayData)); //
-  await ctx.store.save(entities.values(Position));
   await ctx.store.save(entities.values(PositionSnapshot));
 });
